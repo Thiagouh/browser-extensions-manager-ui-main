@@ -64,7 +64,7 @@ Create a browser extension manager UI where users can:
 
 ### Continued development
 
-- add **unit tests** with Jest for functions like ``renderFilteredCards` and event handlers.
+- add **unit tests** with Jest for functions like `renderFilteredCards` and event handlers.
 - Set up **ESLint (Airbnb)** + **Prettier** with Husky hoooks for code quality and consistency.
 - Consider migrating to **TypeScript** for stronger typing of `extensionsData` and module
 
