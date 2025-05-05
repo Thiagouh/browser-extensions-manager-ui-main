@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="./assets/images/logo.svg"
+        class="logo-icon"
+        alt="Extensions Logo"
+      />
+      <button
+        type="button"
+        id="theme-toggle"
+        aria-label="toggle light/dark theme"
+      >
+        <img
+          src="./assets/images/icon-moon.svg"
+          class="theme-toggle__icon"
+          alt=""
+          aria-hidden="true"
+        />
+      </button>
+    </div>
+    <div class="container">
+      <div class="search-filter">
+        <h1>Extensions List</h1>
+        <div class="button-group">
+          <input type="button" value="All" id="all" placeholder="All" />
+          <input
+            type="button"
+            value="Inactive"
+            id="inactive"
+            placeholder="Inactive"
+          />
+          <input
+            type="button"
+            value="Active"
+            id="active"
+            placeholder="Active"
+          />
+        </div>
+      </div>
+      <div class="extensions-container"></div>
+    </div>
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>

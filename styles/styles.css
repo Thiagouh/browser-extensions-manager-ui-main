@@ -1,0 +1,274 @@
+:root {
+  /* Neutral Colors */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+
+  /* Red Colors */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --background-color: linear-gradient(
+    180deg,
+    var(--neutral-200) 0%,
+    #eef8f9 100%
+  );
+
+  --text-color: var(--neutral-900);
+
+  /* Font Family */
+  --font-family: "Noto Sans", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --background-color: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --text-color: hsl(0, 100%, 100%);
+  --neutral-0: var(--neutral-900);
+  --neutral-100: var(--neutral-800);
+  --neutral-200: var(--neutral-700);
+  --neutral-300: var(--neutral-600);
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Italic";
+  src: url("../assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 400 700;
+  font-style: italic;
+}
+
+body {
+  min-height: 100vh;
+  padding: 1rem 8rem;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+@media (max-width: 920px) {
+  body {
+    padding: 1rem 2rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid var(--neutral-100);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 0.5rem var(--neutral-200);
+  background-color: var(--neutral-100);
+}
+
+.logo-icon {
+  height: 2.4rem;
+  align-self: center;
+}
+
+#theme-toggle {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}
+
+.theme-toggle__icon {
+  height: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background-color: var(--neutral-300);
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle__icon:hover {
+  background-color: var(--neutral-300);
+}
+
+.search-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.button-group input {
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem;
+  border: 1px solid var(--neutral-300);
+  border-radius: 1.5rem;
+  outline: none;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+.extensions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--neutral-100);
+  border-radius: 1rem;
+  box-shadow: 0 1px 0.2rem var(--neutral-300);
+  background-color: var(--neutral-0);
+}
+
+.card-content {
+  display: flex;
+  padding: 1rem;
+}
+
+.card-content__text {
+  padding: 0 1rem;
+}
+
+.card-content__text h2 {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.grid-logo {
+  width: 3.5rem;
+  align-self: flex-start;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.card-buttons button {
+  padding: 0.4rem 0.9rem;
+  margin: 0 0.2rem;
+  border: 1px solid var(--neutral-300);
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+.card-buttons button,
+.button-group input {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--neutral-0);
+  box-shadow: 0 1px 0.2rem var(--neutral-200);
+  cursor: pointer;
+}
+
+.card-buttons button:focus,
+.button-group input:focus {
+  background-color: var(--red-500);
+  box-shadow: 0 1px 0.2rem var(--neutral-200);
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  margin: 0 0.2rem;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--neutral-300);
+  border-radius: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  left: 2px;
+  top: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.2s ease, background-color 0.2s ease;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--red-500);
+}
+
+.switch input:checked + .slider::before {
+  left: calc(100% - 1.1rem - 2px);
+  background-color: white;
+}
+
+@keyframes slide-left-fade {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-right-fade {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-left {
+  animation: slide-left-fade 0.5s ease forwards;
+}
+
+.slide-right {
+  animation: slide-right-fade 0.5s ease forwards;
+}
