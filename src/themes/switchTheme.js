@@ -20,8 +20,8 @@ function applyTheme(theme) {
   localStorage.setItem("theme", theme);
   DOM.icon.src =
     theme === "dark"
-      ? "../../../assets/images/icon-sun.svg"
-      : "../../../assets/images/icon-moon.svg";
+      ? "../../assets/images/icon-sun.svg"
+      : "../../assets/images/icon-moon.svg";
   DOM.themeToggle.setAttribute(
     "aria-label",
     theme === "dark" ? "toggle to light theme" : "toggle to dark theme"
